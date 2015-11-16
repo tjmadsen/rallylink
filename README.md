@@ -5,7 +5,6 @@
 
 Using #rally, and mentioning a user story or defect in format "USXXX" or "DEXXX", the bot will respond with a link to the story.
 
-![TimeLord Example](https://s3.amazonaws.com/f.cl.ly/items/0g1G0u2B2e000e3m0P1s/timelord.png)
 
 ## Usage
 
