@@ -15,21 +15,21 @@ def get_link(phrase)
     item_identifier = item_identifier[1..99] if (item_identifier[0] == 'U' && item_identifier[1] == 'S')
     item = nil
     if (item_identifier[0] == 'U' && item_identifier[1] == 'S')
-      puts "{item_identifier}"
+      puts "#{item_identifier}"
       item = item_identifier
     end
     if (item_identifier[0] == 'D' && item_identifier[1] == 'E')
-      puts "{item_identifier}"
+      puts "#{item_identifier}"
       item = item_identifier
     end
     
     if item
       # puts "Parsed: #{phrase} -> {item}"
-      message = "> <https://rally1.rallydev.com/#/{ENV['SLACK_TOKEN']}/search?keywords={item}|{item}>"
+      message = "> <https://rally1.rallydev.com/#/#{ENV['SLACK_TOKEN']}/search?keywords=#{item}|#{item}>"
       emoji = ":nerd:"
     else
       # puts "Parsed: #{phrase} -> {item}"
-      message = "> {phrase}"
+      message = "> #{phrase}"
       emoji = ":nerd:"
     end
     [message, emoji]
