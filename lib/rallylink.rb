@@ -24,7 +24,7 @@ def get_link(phrase)
     end
     
     if item
-      # puts "Parsed: #{phrase} -> #{time.strftime('%I:%M%P')} #{time.zone}"
+      puts "Parsed: #{phrase} -> {item}"
       message = "> <https://rally1.rallydev.com/#/{ENV['SLACK_TOKEN']}/search?keywords={item}|{item}>"
       emoji = ":nerd:"
     end
