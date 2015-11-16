@@ -10,20 +10,16 @@ def get_link(phrase)
   message = nil
   emoji = nil
   begin
-    item_identifier = phrase.split.first.try(:upcase)
-    de_identifier = item_identifier
-    de_identifier = de_identifier[1..99] if (de_identifier[0] == 'D' and de_identifier[1] == 'E')
-    us_identifier = item_identifier
-    us_identifier = us_identifier[1..99] if (us_identifier[0] == 'U' and us_identifier[1] == 'S')
+    # tokens = phrase.split.try(:upcase)
+    tokens = phrase.split
     item = nil
-    if (de_identifier[0] == 'D' and de_identifier[1] == 'E')
-      puts "#{item_identifier}"
-      item = item_identifier
+    tokens.each do |value|
+      item = value[1..99] if (value[0] == 'D' and value[1] == 'E')
     end
-    if (us_identifier[0] == 'U' and us_identifier[1] == 'S')
-      puts "#{item_identifier}"
-      item = item_identifier
+    tokens.each do |value|
+      item = value[1..99] if (value[0] == 'U' and value[1] == 'S')
     end
+    
     
     if item
       # puts "Parsed: #{phrase} -> {item}"
