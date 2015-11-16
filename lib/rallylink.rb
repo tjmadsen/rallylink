@@ -15,11 +15,11 @@ def get_link(phrase)
     item_identifier = item_identifier[1..99] if (item_identifier[0] == 'U' && item_identifier[1] == 'S')
     item = nil
     if (item_identifier[0] == 'U' && item_identifier[1] == 'S')
-      puts "{zone_identifier}"
+      puts "{item_identifier}"
       item = item_identifier
     end
     if (item_identifier[0] == 'D' && item_identifier[1] == 'E')
-      puts "{zone_identifier}"
+      puts "{item_identifier}"
       item = item_identifier
     end
     
