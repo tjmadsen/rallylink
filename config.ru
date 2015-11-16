@@ -1,4 +1,4 @@
 $LOAD_PATH << './lib'
-require 'timebot'
+require 'rallylink'
 
-run TimeBot::Web
+run RallyLink::Web
