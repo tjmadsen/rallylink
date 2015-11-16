@@ -11,14 +11,16 @@ def get_link(phrase)
   emoji = nil
   begin
     item_identifier = phrase.split.first.try(:upcase)
-    item_identifier = item_identifier[1..99] if (item_identifier[0] == 'D' and item_identifier[1] == 'E')
-    item_identifier = item_identifier[1..99] if (item_identifier[0] == 'U' and item_identifier[1] == 'S')
+    de_identifier = item_identifier
+    de_identifier = de_identifier[1..99] if (de_identifier[0] == 'D' and de_identifier[1] == 'E')
+    us_identifier = item_identifier
+    us_identifier = us_identifier[1..99] if (us_identifier[0] == 'U' and us_identifier[1] == 'S')
     item = nil
-    if (item_identifier[0] == 'U' and item_identifier[1] == 'S')
+    if (de_identifier[0] == 'D' and de_identifier[1] == 'E')
       puts "#{item_identifier}"
       item = item_identifier
     end
-    if (item_identifier[0] == 'D' and item_identifier[1] == 'E')
+    if (us_identifier[0] == 'U' and us_identifier[1] == 'S')
       puts "#{item_identifier}"
       item = item_identifier
     end
