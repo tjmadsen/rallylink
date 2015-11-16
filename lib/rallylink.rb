@@ -31,7 +31,7 @@ def get_link(phrase)
       emoji = ":nerd:"
     else
       # puts "Parsed: #{phrase} -> {item}"
-      message = "> #{phrase}"
+      message = "> #{phrase}  #{item_identifier}  #{us_identifier}"
       emoji = ":nerd:"
     end
     [message, emoji]
