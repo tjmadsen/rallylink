@@ -51,7 +51,7 @@ module RallyLink
       return reply.to_json
     end
     
-    post "/time" do
+    post "/rally" do
       message, emoji = get_link(request['text'])
       status 200
       
