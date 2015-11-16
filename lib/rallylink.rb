@@ -11,12 +11,14 @@ def get_link(phrase)
   emoji = nil
   begin
     # tokens = phrase.split.try(:upcase)
-    tokens = phrase.split
+    tokens = phrase.split(" ")
     item = nil
     tokens.each do |value|
+      value = value.try(:upcase)
       item = value[1..99] if (value[0] == 'D' and value[1] == 'E')
     end
     tokens.each do |value|
+      value = value.try(:upcase)
       item = value[1..99] if (value[0] == 'U' and value[1] == 'S')
     end
     
