@@ -15,21 +15,17 @@ def get_link(phrase)
     item = nil
     tokens.each do |value|
       value = value.try(:upcase)
-      item = value[1..99] if (value[0] == 'D' and value[1] == 'E')
+      item = value[0..99] if (value[0] == 'D' and value[1] == 'E')
     end
     tokens.each do |value|
       value = value.try(:upcase)
-      item = value[1..99] if (value[0] == 'U' and value[1] == 'S')
+      item = value[0..99] if (value[0] == 'U' and value[1] == 'S')
     end
     
     
     if item
       # puts "Parsed: #{phrase} -> {item}"
-      message = "> <https://rally1.rallydev.com/#/#{ENV['SLACK_TOKEN']}/search?keywords=#{item}|#{item}>"
-      emoji = ":nerd:"
-    else
-      # puts "Parsed: #{phrase} -> {item}"
-      message = "> #{phrase}  #{item_identifier}  #{us_identifier}"
+      message = "> Here is a Rally link to the item you mentioned: <https://rally1.rallydev.com/#/#{ENV['RALLY_INSTANCE']}/search?keywords=#{item}|#{item}>"
       emoji = ":nerd:"
     end
     [message, emoji]
